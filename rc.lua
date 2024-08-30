@@ -91,3 +91,6 @@ beautiful.useless_gap = 8
 
 -- integrate pywal
 awful.spawn.with_shell("wal -R")
+
+
+-- test github auth
