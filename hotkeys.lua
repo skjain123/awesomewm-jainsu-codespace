@@ -84,7 +84,7 @@ globalkeys = gears.table.join(
     -- Prompt
     awful.key({ modkey },            "r",     
         function () 
-            awful.util.spawn("dmenu_run") 
+            awful.util.spawn("dmenu_run -c -l 20 -i") 
         end,
         {description = "run dmenu", group = "sunil"}),
 

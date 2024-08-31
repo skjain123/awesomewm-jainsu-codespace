@@ -47,6 +47,9 @@ awful.layout.layouts = {
 }
 -- }}}
 
+-- Themes define colours, icons, font and wallpapers.
+beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+
 -- Load separate configurations
 require("error_handling")
 require("variables")
@@ -56,8 +59,7 @@ require("hotkeys")
 require("rules")
 require("signals")
 
--- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+
 
 -- Enable sloppy focus, so that focus follows mouse.
 --[[ client.connect_signal("mouse::enter", function(c)
@@ -67,6 +69,7 @@ end) ]]
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
 
 
 -- ------------------------ Sunil's Additions --------------------------
