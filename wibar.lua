@@ -80,11 +80,24 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytasklist = awful.widget.tasklist {
         screen  = s,
         filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
+        buttons = tasklist_buttons,
+	style = {
+		shape_border_width = 1,
+		shape_border_color = '#777777',
+		shape = gears.shape.rounded_bar,
+	},
     }
 
-    -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    -- Create the wibox -- configurations
+    s.mywibox = awful.wibar({ 
+	    position = "top", 
+	    width = "75%", 
+	    screen = s,
+	    ontop = true,
+	    shape = gears.shape.rounded_bar,
+	    height = 30,
+	    y = 100 -- currently working on this !!!!!!!!!! 
+    })
 
     -- Add widgets to the wibox
     s.mywibox:setup {

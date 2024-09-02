@@ -82,15 +82,15 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "r",     
-        function () 
-            awful.util.spawn("dmenu_run -c -l 20 -i") 
+    awful.key({ modkey },            "r",
+        function ()
+            awful.util.spawn("dmenu_run -c -l 20 -i")
         end,
         {description = "run dmenu", group = "sunil"}),
 
-    awful.key({ modkey, "Control" },            "a",     
-        function () 
-            awful.util.spawn("code /home/sunil/.config/awesome/") 
+    awful.key({ modkey, "Control" },            "a",
+        function ()
+            awful.util.spawn("alacritty && cd /home/sunil/.config/awesome/ && nvim .")
         end,
         {description = "open rc.lua in vscode", group = "sunil"}),
 
