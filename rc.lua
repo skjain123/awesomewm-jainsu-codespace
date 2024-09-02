@@ -22,10 +22,6 @@ require("awful.hotkeys_popup.keys")
 debian = require("debian.menu")
 has_fdo, freedesktop = pcall(require, "freedesktop")
 
-
-
-
-
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
@@ -60,18 +56,18 @@ require("hotkeys")
 require("rules")
 require("signals")
 
-
-
 -- Enable sloppy focus, so that focus follows mouse.
 --[[ client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end) ]]
 
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+client.connect_signal("focus", function(c)
+    c.border_color = beautiful.border_focus
+end)
+client.connect_signal("unfocus", function(c)
+    c.border_color = beautiful.border_normal
+end)
 -- }}}
-
-
 
 -- ------------------------ Sunil's Additions --------------------------
 
@@ -84,10 +80,8 @@ awful.spawn.with_shell("nitrogen --restore")
 -- xrandr on startup
 awful.util.spawn("/home/sunil/.screenlayout/def.sh")
 
-
 -- Create gaps between windows
 beautiful.useless_gap = 8
-
 
 -- transparent windows
 -- awful.spawn.with_shell("pkill picom")
